@@ -1,0 +1,69 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: request_guidance
+  examples: |
+    - I seek help for my [career](guidance).
+    - need some advice on my [future](guidance).
+    - can you help me with my [career decisions](guidance)?
+    - please guide me for [further studies](guidance).
+
+- intent: respond_interests
+  examples: |
+    - My area of interests are [robotics](interest) and [ai](interest).
+    - I personally prefer a future in [marketing](interest).
+    - [Finance](interest) is a thing which woos me a lot. 
+    - i want to see myself in [research](interest). 
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- synonym: guidance
+  examples: |
+    - career
+    - future
+    - career decisions
+    - further studies
