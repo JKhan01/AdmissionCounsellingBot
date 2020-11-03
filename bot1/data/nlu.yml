@@ -94,3 +94,20 @@ nlu:
     - future
     - career decisions
     - further studies
+
+- lookup: location
+  examples: |
+    - Mumbai
+    - Thane
+    - Mumbai Suburbs
+    - Navi Mumbai
+    - Raigad
+    - Pune
+    - Nagpur
+    - Nashik
+    - Aurangabad
+    - Chennai
+    - Delhi
+    - Bangalore
+    - Hyderabad
+    - Indore
