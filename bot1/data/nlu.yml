@@ -52,7 +52,9 @@ nlu:
     - My area of interests are [robotics](interest) and [ai](interest).
     - I personally prefer a future in [marketing](interest).
     - [Finance](interest) is a thing which woos me a lot. 
-    - i want to see myself in [research](interest). 
+    - i want to see myself in [research](interest).
+    - i want to become a [doctor](interest).
+    - i love [aeronautics](interest)but have a inclination towards [dancing](interest).
 
 - intent: bot_challenge
   examples: |
@@ -60,7 +62,32 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
+    
+- intent: Preffered_location
+  examples: |
+    - can you suggest me colleges in [maharashtra](location)?
+    - It would be better if I get enrolled in colleges near [Pune](location) or [Nagpur](location)
+    -
+    
+- intent: respond_skills
+  examples: |
+    - I am good at [programming](skills)
+    - I am good at [vocabulary](skills) and love to [write](skills) as well.
+    - I am a hood [speaker](skills).
+    - I can [manage](skills) things well.
+   
+    
+- intent: respond_stream
+  examples: |
+    - can you suggest me further options if i choose [Science](stream).
+    - I am confused about which stream to choose.
+    - what all opportunities are there if i choose [commerce](stream).
+    - can you suggest me further options if i choose [Arts](stream).
+    - which stream should i choose based on my grades .
+    - I have completed junior college from [science](stream) . what are the further options?
+    - I have completed junior college from [commerce](stream). what are the further options?
+    - I have completed my junior college from [arts](stream).  what are the further options?
+    
 - synonym: guidance
   examples: |
     - career

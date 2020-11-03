@@ -10,9 +10,17 @@ intents:
   - request_guidance
   - respond_interests
   - bot_challenge
+  - Preffered_location
+  - respond_skills
+  - respond_stream
+  
 entities:
   - guidance
   - interest
+  - location
+  - skills
+  - stream
+
 responses:
   utter_greet:
   - text: "Hey! How are you?"
@@ -24,7 +32,7 @@ responses:
   - text: "You seek help on guidance"
 
   utter_interests_response:
-  - text: f"You have specified your interests to be {interest}"
+  - text: "You have specified your interests to be {interest}"
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
