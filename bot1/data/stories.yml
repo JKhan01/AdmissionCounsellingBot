@@ -14,3 +14,18 @@ stories:
   steps:
   - intent: respond_interests
   - action: utter_interests_response
+
+- story: skills path 1
+steps:
+  - intent: respond_skills
+  - action: utter_skill_response
+
+- story: location path 1
+steps:
+  - intent: Preffered_location
+  - action: utter_location_response
+  
+- story: stream path  1
+steps:
+  - intent: respond_stream
+  - action: utter_stream_response

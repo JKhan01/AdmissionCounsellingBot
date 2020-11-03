@@ -67,7 +67,7 @@ nlu:
   examples: |
     - can you suggest me colleges in [maharashtra](location)?
     - It would be better if I get enrolled in colleges near [Pune](location) or [Nagpur](location)
-    -
+    
     
 - intent: respond_skills
   examples: |

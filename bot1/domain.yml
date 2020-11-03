@@ -33,8 +33,18 @@ responses:
 
   utter_interests_response:
   - text: "You have specified your interests to be {interest}"
+  
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+  
+  utter_skill_response:
+  - text: "The skills you have mentioned are {skills}"
+  
+  utter_location_response:
+  - text: "you have specified location where you need colleges"
+
+  utter_stream_response:
+  - text: " "
 
 
 # slots:
@@ -43,3 +53,4 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
+
