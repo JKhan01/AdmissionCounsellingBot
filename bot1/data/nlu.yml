@@ -36,6 +36,8 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - that is great!
+    - Thank you for the help
 - intent: request_guidance
   examples: |
     - I seek help for my [career](guidance).
@@ -58,6 +60,7 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - who are you?
 - intent: preffered_location_entry
   examples: |
     - [can you](beginners) suggest me colleges in [maharashtra](location)?
@@ -85,14 +88,36 @@ nlu:
 - intent: stream_entry
   examples: |
     - [can you](beginners) suggest me further options if i choose [Science](stream).
-    - I am beginners confused about which stream to choose.
+    - I am interested in [science](stream) stream
+    - The stream of preference is [arts](stream)
+    - [Commerce](stream)
+    - I want to study ahead in [commerce](stream)
+
+- intent: request_scope
+  examples: |
     - what all opportunities are there if i choose [commerce](stream).
-    - can you suggest me further options if i choose [Arts](stream).
-    - which stream should i choose based on my grades .
+    - What are future scopes in [Arts](stream).    
     - I have completed junior college from [science](stream) . what are the further options?
     - I have completed junior college from [commerce](stream). what are the further options?
     - I have completed my junior college from [arts](stream).  what are the further options?
-    - I am interested in [science](stream) stream
+    - I am more into [drawing](nostream) and creative arts. Can you suggest me something?
+    - I feel passionate about [music](nostream). What is the scope in it?
+- lookup: stream
+  examples: |
+    - science
+    - Science
+    - Arts
+    - arts
+    - Commerce
+    - commerce
+
+- lookup: nostream
+  examples: |
+    - music
+    - Music
+    - Drawing
+    - drawing
+
 - synonym: guidance
   examples: |
     - career

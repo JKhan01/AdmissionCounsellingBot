@@ -14,7 +14,15 @@ stories:
   - active_loop: interaction_form
   # - active_loop: null
   # - action: action_provide_guidance
+- story: affirm path 1
+  steps:
+  - intent: affirm
+  - action: utter_respond_generous
 
+- story: scope path 1
+  steps:
+  - intent: request_scope
+  - action: action_provide_scope
 - story: interest path 1
   steps:
   - intent: respond_interests
