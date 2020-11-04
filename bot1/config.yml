@@ -31,7 +31,7 @@ policies:
 # # See https://rasa.com/docs/rasa/policies for more information.
   - name: MemoizationPolicy
   - name: TEDPolicy
-    max_history: 5
+    max_history: 3
     epochs: 100
   - name: RulePolicy
   - name: MappingPolicy

@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,62 +36,84 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: request_guidance
   examples: |
     - I seek help for my [career](guidance).
     - need some advice on my [future](guidance).
-    - can you help me with my [career decisions](guidance)?
+    - [can you](beginners) help me with the [right college](guidance)?
     - please guide me for [further studies](guidance).
-
+    - Can you find me the [perfect colleges](guidance) for me?
+    - [can you]{"entity": "beginners", "value": "beginners"} help me with the [right college](guidance)
 - intent: respond_interests
   examples: |
     - My area of interests are [robotics](interest) and [ai](interest).
     - I personally prefer a future in [marketing](interest).
-    - [Finance](interest) is a thing which woos me a lot. 
+    - [Finance](interest) is a thing which woos me a lot.
     - i want to see myself in [research](interest).
     - i want to become a [doctor](interest).
-    - i love [aeronautics](interest)but have a inclination towards [dancing](interest).
-
+    - i love [aeronautics](interest) but have a inclination towards [dancing](interest).
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-    
-- intent: Preffered_location
+- intent: preffered_location_entry
   examples: |
-    - can you suggest me colleges in [maharashtra](location)?
-    - It would be better if I get enrolled in colleges near [Pune](location) or [Nagpur](location)
-    
-    
+    - [can you](beginners) suggest me colleges in [maharashtra](location)?
+    - [It would](beginners) be better if I get enrolled in colleges near [Pune](location) or [Nagpur](location)
+    - [will you](beginners) list some colleges in and around [Mumbai](location).
+    - [Help me](beginners) with [commerce](stream) colleges near [Panvel](location)
+    - The preferred [location](place) of study is [Aurangabad](location)
+    - The [region](place) of preference for study is [Mumbai](location) and [suburbs](location)
+    - The preferred [regions](place) of study include [Mumbai](location) and [Pune](location)
+    - colleges in Navi [Mumbai](location)
+- intent: grades_entry
+  examples: |
+    - My percentage was [47.00](grades)
+    - I had [41.9](grades) in SSC.
+    - I scored [36.30](grades) in 10th grade
+    - My Percentage score was [90.40](grades)
+    - I had a percentage of [92.60](grades)
+    - My percentage marks in SSC were [92.40](grades)%
 - intent: respond_skills
   examples: |
     - I am good at [programming](skills)
     - I am good at [vocabulary](skills) and love to [write](skills) as well.
     - I am a hood [speaker](skills).
     - I can [manage](skills) things well.
-   
-    
-- intent: respond_stream
+- intent: stream_entry
   examples: |
-    - can you suggest me further options if i choose [Science](stream).
-    - I am confused about which stream to choose.
+    - [can you](beginners) suggest me further options if i choose [Science](stream).
+    - I am beginners confused about which stream to choose.
     - what all opportunities are there if i choose [commerce](stream).
     - can you suggest me further options if i choose [Arts](stream).
     - which stream should i choose based on my grades .
     - I have completed junior college from [science](stream) . what are the further options?
     - I have completed junior college from [commerce](stream). what are the further options?
     - I have completed my junior college from [arts](stream).  what are the further options?
-    
+    - I am interested in [science](stream) stream
 - synonym: guidance
   examples: |
     - career
     - future
     - career decisions
     - further studies
-
+- synonym: place
+  examples: |
+    - region
+    - place
+    - area
+    - zone
+- synonym: beginners
+  examples: |
+    - can you
+    - help me
+    - will you
+    - suggest me
+- regex: grades
+  examples: |
+    - [0-9]{2}.[0-9]+[%]?
 - lookup: location
   examples: |
     - Mumbai

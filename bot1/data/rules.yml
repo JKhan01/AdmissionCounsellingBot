@@ -11,3 +11,14 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: utter form values
+  condition:
+  # Condition that form is active.
+  - active_loop: interaction_form
+  steps:
+  # Form is deactivated
+  - action: interaction_form
+  - active_loop: null
+  - action: utter_details
+  - action: action_provide_guidance

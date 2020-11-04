@@ -1,0 +1,28 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class=active, fontsize=12, label=action_session_start];
+2 [class=active, fontsize=12, label=interaction_form];
+6 [class=active, fontsize=12, label=utter_details];
+7 [class=active, fontsize=12, label=utter_location_response];
+8 [class="intent dashed active", label="  ?  ", shape=rect];
+9 [class="intent active", fillcolor=lightblue, label="can you help me with the right college", shape=rect, style=filled];
+10 [class="intent active", fillcolor=lightblue, label="I am interested in science stream", shape=rect, style=filled];
+11 [class="intent active", fillcolor=lightblue, label="The preferred regions of study include Mumbai and Pune", shape=rect, style=filled];
+12 [class="intent active", fillcolor=lightblue, label="My percentage marks in SSC were 92.40%", shape=rect, style=filled];
+13 [class="intent active", fillcolor=lightblue, label="colleges in Navi Mumbai", shape=rect, style=filled];
+0 -> "-1"  [class="", key=NONE, label=""];
+0 -> 1  [class=active, key=NONE, label=""];
+1 -> 9  [class=active, key=0];
+2 -> 6  [class=active, key=NONE, label=""];
+2 -> 10  [class=active, key=0];
+2 -> 11  [class=active, key=0];
+2 -> 12  [class=active, key=0];
+6 -> 13  [class=active, key=0];
+7 -> 8  [class=active, key=NONE, label=""];
+9 -> 2  [class=active, key=0];
+10 -> 2  [class=active, key=0];
+11 -> 2  [class=active, key=0];
+12 -> 2  [class=active, key=0];
+13 -> 7  [class=active, key=0];
+}

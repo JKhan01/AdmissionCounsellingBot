@@ -1,56 +1,81 @@
-version: "2.0"
-
-
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - request_guidance
-  - respond_interests
-  - bot_challenge
-  - Preffered_location
-  - respond_skills
-  - respond_stream
-  
-entities:
-  - guidance
-  - interest
-  - location
-  - skills
-  - stream
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_guidance_response:
-  - text: "You seek help on guidance"
-
-  utter_interests_response:
-  - text: "You have specified your interests to be {interest}"
-  
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-  
-  utter_skill_response:
-  - text: "The skills you have mentioned are {skills}"
-  
-  utter_location_response:
-  - text: "you have specified location where you need colleges"
-
-  utter_stream_response:
-  - text: " "
-
-
-# slots:
-#   - interest:
-#     type: text
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: false
-
+intents:
+- stream_entry
+- request_guidance
+- preffered_location_entry
+- grades_entry
+- greet
+- goodbye
+- affirm
+- deny
+- respond_interests
+- bot_challenge
+- respond_skills
+entities:
+- beginners
+- grades
+- guidance
+- interest
+- location
+- place
+- skills
+- stream
+slots:
+  grades:
+    type: text
+    influence_conversation: false
+  interest:
+    type: text
+    influence_conversation: false
+  location:
+    type: list
+    influence_conversation: false
+  requested_slot:
+    type: text
+    influence_conversation: false
+  stream:
+    type: text
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! It is good to have you here
+  utter_goodbye:
+  - text: Have a great journey ahead. All the Best!
+  utter_guidance_response:
+  - text: You seek help on guidance
+  utter_ask_grades:
+  - text: I will also like to know your percentage of marks in SSC.
+  utter_ask_location:
+  - text: Preferred Area of study?
+  utter_ask_stream:
+  - text: The stream of your interest is?
+  utter_interests_response:
+  - text: 'You have specified your interests to be '
+  utter_iamabot:
+  - text: I am an assistant bot, developed by Sakshi, Rutuja and Jamal.
+  utter_skill_response:
+  - text: You just boasted about your skills
+  utter_location_response:
+  - text: you have specified location where you need colleges
+  utter_stream_response:
+  - text: ' You provided some stream input'
+  utter_details:
+  - text: The stream of focus is {stream} and the regions of study are {location}. Also the perccentage score is {grades}
+actions:
+- utter_details
+- utter_location_response
+- action_provide_guidance
+forms:
+  interaction_form:
+    stream:
+    - type: from_entity
+      entity: stream
+    location:
+    - type: from_entity
+      entity: location
+    grades:
+    - type: from_entity
+      entity: grades
+version: '2.0'

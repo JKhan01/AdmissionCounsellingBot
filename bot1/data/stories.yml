@@ -2,13 +2,18 @@ version: "2.0"
 
 stories:
 
-
-- story: guidance path 1
+- story: greet path 1
   steps:
   - intent: greet
   - action: utter_greet
+
+- story: guidance path 1
+  steps:
   - intent: request_guidance
-  - action: utter_guidance_response
+  - action: interaction_form
+  - active_loop: interaction_form
+  # - active_loop: null
+  # - action: action_provide_guidance
 
 - story: interest path 1
   steps:
@@ -16,16 +21,58 @@ stories:
   - action: utter_interests_response
 
 - story: skills path 1
-steps:
+  steps:
   - intent: respond_skills
   - action: utter_skill_response
 
 - story: location path 1
-steps:
-  - intent: Preffered_location
+  steps:
+  - intent: preffered_location_entry
   - action: utter_location_response
   
 - story: stream path  1
-steps:
-  - intent: respond_stream
+  steps:
+  - intent: stream_entry
   - action: utter_stream_response
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: request_guidance
+#     entities:
+#     - beginners: beginners
+#     - guidance: right college
+#   - action: interaction_form
+#   - active_loop: interaction_form
+#   - slot_was_set:
+#     - requested_slot: stream
+#   - slot_was_set:
+#     - stream: science
+#   - slot_was_set:
+#     - stream: science
+#   - slot_was_set:
+#     - requested_slot: location
+#   - slot_was_set:
+#     - location:
+#       - Mumbai
+#       - Pune
+#   - slot_was_set:
+#     - location:
+#       - Mumbai
+#       - Pune
+#   - slot_was_set:
+#     - requested_slot: grades
+#   - slot_was_set:
+#     - grades: '92.40'
+#   - slot_was_set:
+#     - grades: '92.40'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_details
+#   - intent: preffered_location_entry
+#     entities:
+#     - location: Mumbai
+#   - slot_was_set:
+#     - location:
+#       - Mumbai
+#   - action: utter_location_response
