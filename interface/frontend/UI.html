@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- <script src="./recorder.js"></script> -->
+<title>Jarvis</title>
+</head>
+<body>
+    <div class='mainHeader' id='mainHeader'> 
+    <h1 style="text-align: center; font-family: 'Courier New', Courier, monospace;">
+        ASSISTANT BOT FOR ADMISSION COUNSELLING
+    </h1>
+    </div>
+    <div style="width: 50%; text-align: center; margin-left: 25vw; margin-right: 20vw;">
+    <div id="chatcontainer">
+        <div class="message-container"><div class="message bot-message">Hi There. I am a virtual assistant. I can help you with some valuable study-related info. </div></div>
+        <div class="message-container"><div class="message human-message">Hello </div>
+        </div>
+      </div>
+      <div id="messageinput">
+        
+        <input type="text" id="inputbox" name="userinput" onkeyup="enterListener(event)">
+        <button id="mic" onclick="startDictation()"><i id="micicon" class="fa fa-microphone"></i></button>
+    </div>
+</div>
+<script src="./base.js"></script>
+<script>
+  function startDictation() {
+
+if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+  var recognition = new webkitSpeechRecognition();
+
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  recognition.lang = "en-US";
+  recognition.start();
+
+  recognition.onresult = function(e) {
+    document.getElementById('inputbox').value
+                             = e.results[0][0].transcript;
+    recognition.stop();
+  };
+  recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  }
+</script>
+<script>
+    window.onscroll = function() {myFunction()};
+
+    // Get the header
+    var header = document.getElementById("mainHeader");
+    // var contDiv = document.getElementById("contentSection");
+    // var sideColumn = document.getElementById("searchColumn");
+    // Get the offset position of the heading
+    var sticky = header.offsetTop;
+    var locate = 0;
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+
+    } else {
+        header.classList.remove("sticky");
+    }}
+</script>
+</body>
+</html>

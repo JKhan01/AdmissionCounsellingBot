@@ -23,6 +23,10 @@ stories:
   steps:
   - intent: request_scope
   - action: action_provide_scope
+  - slot_was_set:
+    - stream: null
+  - slot_was_set:
+    - nostream: null 
 - story: interest path 1
   steps:
   - intent: respond_interests

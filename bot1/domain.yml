@@ -1,5 +1,5 @@
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 15
   carry_over_slots_to_new_session: false
 intents:
 - stream_entry
@@ -55,7 +55,7 @@ responses:
   utter_ask_grades:
   - text: I will also like to know your percentage of marks in SSC.
   utter_ask_location:
-  - text: Preferred Area of study?
+  - text: Preferred Location for studying?
   utter_ask_stream:
   - text: The stream of your interest is?
   utter_interests_response:
@@ -69,7 +69,7 @@ responses:
   utter_stream_response:
   - text: ' You provided some stream input'
   utter_details:
-  - text: The stream of focus is {stream} and the regions of study are {location}. Also the perccentage score is {grades}
+  - text: The stream of focus is {stream} and the preferred location is {location}. Also the perccentage score is {grades}
 actions:
 - utter_details
 - utter_location_response

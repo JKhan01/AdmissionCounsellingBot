@@ -14,7 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk import Action, Tracker
 from rasa_sdk.forms import FormAction
 from packages.scrape_college import CollegeScrape
-#
+from rasa_sdk.events import SlotSet
 class ActionProvideGuidance(Action):
 
     def name(self) -> Text:
@@ -29,7 +29,9 @@ class ActionProvideGuidance(Action):
         
         response = obj.fetch_list_on_guidance()
         dispatcher.utter_message(text=str(response))
-
+        SlotSet('location',None)
+        SlotSet('stream',None)
+        SlotSet('grades',None)
         return []
 
 class ActionProvideScope(Action):
@@ -52,4 +54,6 @@ class ActionProvideScope(Action):
         else:
             dispatcher.utter_message(text=str(noStream[tracker.get_slot("nostream").capitalize()]))
 
+        SlotSet('nostream',None)
+        SlotSet('stream',None)
         return []
