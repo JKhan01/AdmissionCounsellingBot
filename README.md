@@ -1,6 +1,11 @@
 # Assistant Bot For Admission Counselling
 > The Development Repository for basic career guidance and admission counselling Chatbot based on RASA Framework.
 
+## Developed and Maintained By:
+>> 1. **[Sakshi Khose](https://github.com/sakshi2399)**
+>> 2. **[Rutuja Kitukale](https://github.com/rutujakitukale)**
+>> 3. **[Jamaluddin Khan](https://github.com/JKhan01)**
+
 ## NOTE
 >> The rasa version used for the bot is *2.0* . The version is compatible with python **3.6,3.7 and 3.8**
 
